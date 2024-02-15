@@ -1,6 +1,5 @@
 import { Autocomplete, Grid, Skeleton, TextField } from "@mui/material"
 import useAxios from "../hooks/useAxios"
-export const startFlags = [];
 
 const SelectCountry = (props) => {
   const { value, setValue, label } = props;
@@ -19,9 +18,6 @@ const SelectCountry = (props) => {
 
   const dataFilter = data.filter(item => "currencies" in item);
   const dataCountries = dataFilter.map(item => {
-    if (item.name == "USD" || item.name == "AUD") {
-      startFlags.push(item.flags.png)
-    }
     return {
       label: `${Object.keys(item.currencies)[0]} - ${item.name.common}`,
       flagUrl: item.flags.png
@@ -44,7 +40,16 @@ const SelectCountry = (props) => {
             {option.label}
           </li>
         )}
-        renderInput={(params) => <TextField {...params} label={label} />}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label={label}
+            InputProps={{
+              ...params.InputProps,
+              endAdornment: null
+            }}
+          />
+        )}
       />
     </Grid>
   )

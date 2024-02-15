@@ -1,15 +1,14 @@
 import { createContext, useState } from "react";
-
 export const CurrencyContext = createContext();
 
 const CurrencyProvider = ({ children }) => {
   const [fromCurrency, setFromCurrency] = useState({
     label: "USD - United States",
-    flagUrl: "https://flagcdn.com/us.png" // Fikcyjny URL, użyj rzeczywistego adresu
+    flagUrl: ""
   });
   const [toCurrency, setToCurrency] = useState({
     label: "AUD - Australia",
-    flagUrl: "https://flagcdn.com/au.png" // Fikcyjny URL, użyj rzeczywistego adresu
+    flagUrl: ""
   });
   const [firstAmount, setFirstAmount] = useState("");
 

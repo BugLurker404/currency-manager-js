@@ -6,6 +6,7 @@ import SelectCountry from './components/SelectCountry'
 import SwitchCurrency from './components/SwitchCurrency'
 import { CurrencyContext } from './context/CurrencyContext'
 
+
 function App() {
     const {
       fromCurrency,

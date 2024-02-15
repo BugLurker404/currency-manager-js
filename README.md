@@ -1,5 +1,5 @@
 # Currency Manager - React 
-Currency converter project maded in React.js as self learning
+A currency converter project made in React.js for self-learning
 
 # Conversion
 - Currency exchange rates and flags data are downloaded from the API
